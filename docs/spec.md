@@ -418,7 +418,7 @@ That points away from the marketing-dashboard idiom (dark hero, neon accent, glo
 
 Design direction for review:
 
-- **Palette.** Near-monochrome working surface in neutral OKLCH ramps, with saturated hue used *only* for verdict and sync state. Five semantic colors, no more: allowed, redacted, rerouted, blocked, degraded. If a color appears and does not mean one of those, it is decoration and should be cut. This deliberately leaves the palette looking sparse; that is the point — on a live traffic screen, a color must be scannable at a glance across 200 rows.
+- **Palette.** Near-monochrome working surface in neutral OKLCH ramps, with saturated hue used *only* for verdict and sync state. Five semantic colors, no more: allowed, redacted, rerouted, blocked, fallback. If a color appears and does not mean one of those, it is decoration and should be cut. This deliberately leaves the palette looking sparse; that is the point — on a live traffic screen, a color must be scannable at a glance across 200 rows.
 - **Type.** Two families: one for interface text, one monospace for identifiers, model names, tokens, money, and hashes. Tabular numerals mandatory everywhere a number can change without the user acting. Money always right-aligned, always the same number of decimal places within a column.
 - **Density.** Three density modes (comfortable / compact / dense) persisted per user. The traffic table defaults to dense; the onboarding flow to comfortable. An SRE and a first-time developer need different products.
 - **Structure.** Borders and rules encode grouping; they are not applied uniformly for style. No card-per-section layout. The traffic and spend surfaces are tables and charts on a shared canvas, not a grid of tiles.
@@ -690,7 +690,7 @@ Components this product forces into the design system. Each lands in Storybook 9
 
 **New tokens**
 
-- Verdict ramp: allowed / redacted / rerouted / blocked / degraded, each with a foreground, a background, and a border tint at AA contrast in both themes.
+- Verdict ramp: allowed / redacted / rerouted / blocked / fallback, each with a foreground, a background, and a border tint at AA contrast in both themes.
 - Sync-state ramp.
 - Density scale (three steps) applied to table row height, cell padding, and control size.
 - Chart series ramp derived from the existing OKLCH ramps, tested for categorical distinguishability under the common color-vision deficiencies.
